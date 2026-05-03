@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Centro Operativo Legal — GaliA</title>
+<meta property="og:title" content="LegalHub — Estudio Jurídico Galli Zuluaga">
+<meta property="og:description" content="Plataforma legal inteligente del Estudio Jurídico Galli Zuluaga. Acceso unificado a herramientas, gestión de causas y sistemas jurídicos para el ejercicio profesional.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://legalhub.estudiogallizuluaga.com.ar">
+<meta property="og:image" content="https://i.postimg.cc/GhcgG3L9/og-legalhub.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LegalHub — Estudio Jurídico Galli Zuluaga">
+<meta name="twitter:description" content="Plataforma legal inteligente del Estudio Jurídico Galli Zuluaga.">
+<meta name="twitter:image" content="https://legalhub.estudiogallizuluaga.com.ar/og-legalhub.jpg">
+
+<style>
+
+:root{
+  --bg:#020b14;
+  --panel:#071827;
+  --cyan:#00f0ff;
+  --cyan2:#7df8ff;
+  --text:#eaffff;
+  --muted:#a8bfca;
+  --ok:#65ffb8;
+  --warn:#ffd166;
+  --border:rgba(0,240,255,.32);
+  --shadow:0 0 28px rgba(0,240,255,.18);
+}
+
+
+body{
+  margin:0;
+  min-height:100vh;
+  color:var(--text);
+  font-family:Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(0,240,255,.15), transparent 34%),
+    linear-gradient(135deg,#020b14,#06111f 52%,#000);
+}
+
+.app{
+  width:min(1260px,94vw);
+  margin:0 auto;
+  padding:26px 0 56px;
+}
+
+/* HERO (encabezado principal) */
+.hero{
+  border:1px solid var(--border);
+  background:rgba(2,11,20,.92);
+  border-radius:22px;
+
+  box-shadow: 
+    0 0 25px rgba(0,240,255,.15),
+    inset 0 0 30px rgba(0,240,255,.05),
+    inset 0 0 40px rgba(0,240,255,.05);
+
+  padding:20px;
+  margin-bottom:40px;
+  position:relative;
+  overflow:hidden;
+  transition:box-shadow .3s ease;
+}
+
+.hero:hover{
+  box-shadow:
+    0 0 28px rgba(0,240,255,.25),
+    inset 0 0 35px rgba(0,240,255,.04);
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(0,240,255,.12) 40%,
+    rgba(0,240,255,.25) 50%,
+    rgba(0,240,255,.12) 60%,
+    transparent 100%
+  );
+  opacity:0;
+  transition:.6s;
+}
+
+.hero:hover::before{
+  opacity:1;
+  animation:shine 1.2s linear;
+}
+
+@keyframes shine{
+  from{ transform:translateX(-100%); }
+  to{ transform:translateX(100%); }
+}
+
+/* CARDS (todo lo demás) */
+
+  .card{
+  border:1px solid var(--border);
+  background:rgba(7,24,39,.86);
+  border-radius:22px;
+  box-shadow:0 0 14px rgba(0,240,255,.12);
+  padding:20px;
+  margin-bottom:20px;
+}
+
+.hero{
+  background:rgba(2,11,20,.92);
+}
+
+.badge{
+  display:inline-flex;
+  color:var(--cyan2);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:7px 12px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:.78rem;
+  background:rgba(0,240,255,.06);
+  animation:pulseGlow 2.5s infinite ease-in-out;
+}
+
+h1{
+  margin:12px 0 6px;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+  text-shadow:0 0 18px rgba(0,240,255,.72);
+  font-size:2rem;
+}
+
+h2{
+  margin:0 0 14px;
+  color:var(--cyan2);
+  font-size:1rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+p{
+  color:var(--muted);
+  line-height:1.45;
+}
+
+.status{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  border:1px solid rgba(0,240,255,.32);
+  background:linear-gradient(135deg, rgba(0,240,255,.08), rgba(0,0,0,.35));
+  border-radius:16px;
+  padding:14px 18px;
+  box-shadow:
+    0 0 18px rgba(0,240,255,.18),
+    inset 0 0 18px rgba(0,240,255,.05);
+}
+
+.pill{
+  border:1px solid rgba(255,209,102,.45);
+  border-radius:999px;
+  padding:7px 11px;
+  color:var(--warn);
+  background:rgba(255,209,102,.06);
+  font-weight:700;
+}
+
+.small{
+  font-size:.82rem;
+  color:var(--muted);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+@media(max-width:850px){
+  .grid{grid-template-columns:1fr}
+}
+
+.module{
+  min-height:170px;
+}
+
+.module h2 span{
+  color:white;
+}
+
+.links{
+  display:grid;
+  gap:10px;
+}
+@media(max-width:600px){
+  a{
+    font-size:.9rem;
+    padding:12px;
+  }
+
+  h1{
+    font-size:1.6rem;
+  }
+
+  .hero{
+    padding:22px;
+  }
+}
+a{
+  position:relative;
+  display:block;
+  color:var(--text);
+  text-decoration:none;
+  border:1px solid rgba(0,240,255,.25);
+  background:rgba(0,0,0,.32);
+  border-radius:14px;
+  padding:14px;
+  font-size:.95rem;
+  transition:all .25s ease;
+  box-shadow:0 0 0 rgba(0,240,255,0);
+  overflow:hidden;
+}
+
+a::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:14px;
+  pointer-events:none;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(0,240,255,.5),
+    transparent
+  );
+  opacity:0;
+  transform:translateX(-120%);
+  transition:.5s ease;
+}
+
+a:hover{
+  color:white;
+  border-color:rgba(0,240,255,.7);
+  box-shadow:
+    0 0 10px rgba(0,240,255,.35),
+    0 0 22px rgba(0,240,255,.15);
+  transform:translateY(-2px);
+}
+.btn-estudio{
+  display:inline-block;
+  padding:10px 16px;
+
+  border-radius:12px;
+  border:1px solid rgba(0,240,255,.5);
+
+  color:#00f0ff;
+  text-decoration:none;
+  font-weight:500;
+  font-size:.9rem;
+
+  background:rgba(0,240,255,.05);
+
+  transition:all .25s ease;
+
+  box-shadow:0 0 8px rgba(0,240,255,.12);
+}
+.btn-estudio:hover{
+  color:white;
+  border-color:#00f0ff;
+
+  box-shadow:
+    0 0 14px rgba(0,240,255,.35),
+    0 0 28px rgba(0,240,255,.15);
+
+  transform:translateY(-2px);
+}
+
+a:hover::after{
+  opacity:.6;
+  transform:translateX(120%);
+}
+
+.sectionTitle{
+  margin-top:28px;
+  margin-bottom:12px;
+  color:var(--cyan2);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:.95rem;
+}
+
+.note{
+  border:1px solid rgba(255,209,102,.24);
+  color:#fff2c7;
+  background:rgba(255,209,102,.06);
+  border-radius:14px;
+  padding:10px 12px;
+  margin-top:12px;
+  font-size:.86rem;
+}
+
+.footer{
+  margin-top:24px;
+  text-align:center;
+  color:rgba(234,255,255,.45);
+  font-size:.78rem;
+}
+
+/* ANIMACIÓN BADGE */
+@keyframes pulseGlow{
+  0%{
+    box-shadow:0 0 5px rgba(0,240,255,.2);
+  }
+  50%{
+    box-shadow:
+      0 0 12px rgba(0,240,255,.5),
+      0 0 25px rgba(0,240,255,.3);
+  }
+  100%{
+    box-shadow:0 0 5px rgba(0,240,255,.2);
+  }
+}
+
+/* MÓDULO PRINCIPAL */
+.main-module{
+  position:relative;
+}
+
+.main-module::after{
+  display:none;
+}
+
+/* ANIMACIÓN BORDE SUAVE */
+@keyframes borderFlow{
+  0%{
+    background-position:0% 50%;
+  }
+  100%{
+    background-position:300% 50%;
+  }
+}
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#00ff9f;
+  display:inline-block;
+  margin-right:8px;
+
+  box-shadow:0 0 8px #00ff9f, 0 0 16px #00ff9f;
+  animation:blink 1.5s infinite;
+}
+
+@keyframes blink{
+  0%{ opacity:1; }
+  50%{ opacity:.4; }
+  100%{ opacity:1; }
+}
+@media(max-width:600px){
+  .status{
+    flex-direction:column;
+    align-items:stretch;
+    gap:12px;
+  }
+
+  .status > div:first-child{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:8px;
+  }
+
+  .pill{
+    width:100%;
+    text-align:center;
+    white-space:normal;
+    line-height:1.25;
+  }
+
+  .small{
+    font-size:.9rem;
+    line-height:1.35;
+  }
+}
+#splash{
+  position:fixed;
+  inset:0;
+  background:#000;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  z-index:10000;
+  overflow:hidden;
+  animation:fadeOut 0.9s ease forwards;
+  animation-delay:4.2s;
+}
+
+#splash img{
+  width:85%;
+  max-width:900px;
+  filter:drop-shadow(0 0 30px rgba(0,240,255,.9));
+  transform:scale(0.96);
+  opacity:0;
+  animation:zoomIn 1.2s ease-out forwards;
+}
+
+.scan-line{
+  position:absolute;
+  left:0;
+  right:0;
+  top:-20%;
+  height:120px;
+  background:linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0,240,255,.18),
+    transparent
+  );
+  animation:scanMove 3.2s ease-in-out forwards;
+}
+
+.boot-panel{
+  width:85%;
+  max-width:620px;
+  margin-top:24px;
+  text-align:center;
+}
+
+.boot-text{
+  font-family:Orbitron, Arial, sans-serif;
+  color:#00f0ff;
+  font-size:.78rem;
+  letter-spacing:.22em;
+  text-shadow:0 0 12px rgba(0,240,255,.9);
+  margin-bottom:10px;
+}
+
+.boot-bar{
+  height:8px;
+  border:1px solid rgba(0,240,255,.45);
+  border-radius:999px;
+  overflow:hidden;
+  background:rgba(0,240,255,.08);
+  box-shadow:0 0 16px rgba(0,240,255,.25);
+}
+
+.boot-fill{
+  height:100%;
+  width:0%;
+  background:#00f0ff;
+  box-shadow:0 0 20px rgba(0,240,255,.95);
+  animation:bootLoad 3.2s ease forwards;
+}
+
+
+@keyframes zoomIn{
+  0%{ transform:scale(0.92); opacity:0; }
+  60%{ transform:scale(1.03); opacity:1; }
+  100%{ transform:scale(1); opacity:1; }
+}
+
+@keyframes fadeOut{
+  to{ opacity:0; visibility:hidden; pointer-events:none; }
+}
+
+@keyframes scanMove{
+  from{ top:-20%; }
+  to{ top:105%; }
+}
+
+@keyframes bootLoad{
+  from{ width:0%; }
+  to{ width:100%; }
+}
+.footer{
+  margin-top:24px;
+  text-align:center;
+  color:rgba(234,255,255,.45);
+  font-size:.78rem;
+  position:relative;
+}
+
+/* ✨ línea cyber */
+.footer::before{
+  content:"";
+  position:absolute;
+  top:-14px;
+  left:0;
+  width:100%;
+  height:2px;
+
+  background:linear-gradient(
+    90deg,
+    transparent,
+    #00f0ff,
+    #00f0ff,
+    transparent
+  );
+
+  background-size:200% 100%;
+  animation:lineFlow 3s linear infinite;
+
+  box-shadow:
+    0 0 8px #00f0ff,
+    0 0 20px rgba(0,240,255,.6);
+}
+
+/* 🔄 movimiento */
+@keyframes lineFlow{
+  from{
+    background-position:0% 50%;
+  }
+  to{
+    background-position:200% 50%;
+  }
+}
+.hero::before,
+.main-module::after,
+.footer::before{
+  display:none;
+}
+#splash.splash-hidden,
+#loginBox.login-hidden{
+  display:none !important;
+  pointer-events:none !important;
+}
+</style>
+</head>
+<body>
+
+<div id="splash">
+  <div class="scan-line"></div>
+
+  <img src="https://i.postimg.cc/GhcgG3L9/og-legalhub.png" alt="LegalHub Estudio Jurídico Galli Zuluaga" />
+
+  <div class="boot-panel">
+    <div class="boot-text">INICIANDO LEGAL HUB</div>
+
+    <div class="boot-bar">
+      <div class="boot-fill"></div>
+    </div>
+  </div>
+</div>
+<div id="loginBox" style="
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(0,240,255,.18), transparent 35%),
+    linear-gradient(135deg,#020b14,#000);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9998;
+  overflow:hidden;
+">
+
+  <div style="
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(rgba(0,240,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,240,255,.04) 1px, transparent 1px);
+    background-size:38px 38px;
+  "></div>
+
+  <div style="
+    width:min(410px,90vw);
+    position:relative;
+    border:1px solid rgba(0,240,255,.45);
+    border-radius:24px;
+    padding:30px;
+    background:rgba(2,11,20,.92);
+    box-shadow:
+      0 0 30px rgba(0,240,255,.35),
+      0 0 90px rgba(0,240,255,.16),
+      inset 0 0 35px rgba(0,240,255,.08);
+    text-align:center;
+  ">
+
+    <div style="
+      font-size:.7rem;
+      letter-spacing:.22em;
+      color:#7df8ff;
+      margin-bottom:10px;
+      text-transform:uppercase;
+    ">
+      Sistema privado
+    </div>
+
+    <h2 style="
+      color:#00f0ff;
+      margin:0 0 22px;
+      letter-spacing:.08em;
+      text-shadow:0 0 18px rgba(0,240,255,.9);
+    ">
+      ACCESO LEGALHUB
+    </h2>
+
+   <input id="email" type="email" placeholder="Ingrese su correo electrónico"
+  style="
+    width:85%;
+    max-width:300px;
+    margin:10px auto;
+    display:block;
+    padding:12px 14px;
+    border-radius:14px;
+    border:1px solid rgba(0,240,255,.4);
+    background:rgba(0,0,0,.6);
+    color:#eaffff;
+    outline:none;
+    text-align:center;
+  " />
+
+<input id="password" type="password" placeholder="Cree o ingrese su contraseña"
+  style="
+    width:85%;
+    max-width:300px;
+    margin:10px auto;
+    display:block;
+    padding:12px 14px;
+    border-radius:14px;
+    border:1px solid rgba(0,240,255,.4);
+    background:rgba(0,0,0,.6);
+    color:#eaffff;
+    outline:none;
+    text-align:center;
+  " />
+    <div style="display:flex; gap:10px; margin-top:16px;">
+      <button onclick="login()" style="
+        flex:1;
+        padding:12px;
+        border-radius:14px;
+        border:1px solid #00f0ff;
+        background:#00f0ff;
+        color:#001014;
+        font-weight:bold;
+        cursor:pointer;
+        box-shadow:0 0 18px rgba(0,240,255,.35);
+      ">
+        Ingresar
+      </button>
+
+      <button onclick="register()" style="
+        flex:1;
+        padding:12px;
+        border-radius:14px;
+        border:1px solid rgba(0,240,255,.55);
+        background:rgba(0,240,255,.08);
+        color:#00f0ff;
+        font-weight:bold;
+        cursor:pointer;
+      ">
+        Crear cuenta
+      </button>
+    </div>
+  
+<!-- 🔥 BOTÓN DEMO -->
+<button onclick="demoLogin()" style="
+  margin-top:10px;
+  width:100%;
+  padding:12px;
+  border-radius:14px;
+  border:1px solid rgba(0,240,255,.5);
+  background:rgba(0,240,255,.08);
+  color:#00f0ff;
+  font-weight:bold;
+  cursor:pointer;
+">
+  Explorar LegalHub (modo demostración)
+</button>
+
+<button onclick="resetPassword()" style="
+  margin-top:12px;
+  background:none;
+  border:none;
+  color:#7df8ff;
+  cursor:pointer;
+">
+  Olvidé mi contraseña
+</button>
+    <p style="
+      margin:18px 0 0;
+      font-size:.78rem;
+      color:rgba(234,255,255,.55);
+      line-height:1.45;
+    ">
+      Acceso profesional al Centro Operativo Legal del Estudio Jurídico Galli Zuluaga.
+    </p>
+
+  </div>
+</div>
+
+<main class="app">
+ 
+     </div>
+  <section class="hero">
+    <div class="badge">GaliA · Asistente Legal Inteligente</div>
+    <h1>Centro Operativo Legal — GaliA</h1>
+    <p><strong>Plataforma legal inteligente del Estudio Jurídico Galli Zuluaga.</strong><br>
+Acceso unificado a herramientas, gestión de causas y sistemas jurídicos para el ejercicio profesional.</p>
+ <!-- 🔥 BOTÓN -->
+ <div style="margin-top:24px; margin-bottom:30px;">
+  <a href="https://www.estudiogallizuluaga.com.ar" target="_blank" class="btn-estudio">
+    Acceder al sitio del Estudio
+  </a>
+</div>
+<div style="
+  font-size:.75rem;
+  color:#65ffb8;
+  margin-bottom:6px;
+  letter-spacing:.05em;
+">
+  ✔ Recomendado para uso profesional continuo
+</div>
+
+<!-- 🔥 BOTONES SUSCRIPCIÓN -->
+<div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+
+  <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=1b14f1ae27a042049d5e180504f6c4d8" target="_blank" class="btn-suscripcion">
+    Suscripción mensual
+  </a>
+
+  <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=5363ed616a1e4681b2eebaf676bfd5d6" target="_blank" class="btn-suscripcion">
+    Suscripción anual · ahorrá 30%
+  </a>
+
+</div>
+
+<section class="card status-card">
+  <div class="status" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+
+    <!-- IZQUIERDA -->
+    <div>
+      <strong>Estado:</strong> 
+      <span class="pill">
+        <span class="dot"></span>
+        Sistema operativo activo
+      </span>
+    </div>
+
+    <!-- DERECHA -->
+    <div onclick="logout()" style="
+      padding:6px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,80,80,.5);
+      color:#ff6b6b;
+      cursor:pointer;
+      font-size:.85rem;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      transition:.3s;
+    "
+    onmouseover="this.style.boxShadow='0 0 12px rgba(255,80,80,.6)'"
+    onmouseout="this.style.boxShadow='none'"
+    >
+      ● Apagar sistema · cerrar sesión
+    </div>
+
+  </div>
+  <!-- TEXTO ABAJO -->
+  <div class="small" style="margin-top:10px;">
+    Acceso a herramientas jurídicas desde un solo lugar.
+  </div>
+</section>
+<!-- GESTIÓN DE CAUSAS -->
+<div class="card module full main-module">
+  <h2>Gestión de causas</h2>
+
+  <div class="links">
+    <a href="https://jusmendoza.gob.ar/portal-servicios-profesionales/portal-de-gestion-de-causas-judiciales/" target="_blank">
+      Portal IOL (gestión de causas)
+    </a>
+
+    <a href="https://www2.jus.mendoza.gov.ar/listas/proveidos/listas.php" target="_blank">
+      Sistema de listas / proveídos
+    </a>
+  </div>
+
+  <div class="note">
+    Acceso principal para consulta y seguimiento de expedientes judiciales.
+  </div>
+</div>
+
+<section class="grid">
+
+  <div class="card module">
+    <h2>Conciliaciones</h2>
+
+    <div class="links">
+      <a href="https://occ.mendoza.gov.ar/vub/vistas/web/loginWEB.zul" target="_blank">
+        Turno conciliación civil y comercial (OCC)
+      </a>
+
+      <a href="https://ocl.mendoza.gov.ar/vub/vistas/web/loginWEB.zul" target="_blank">
+        Turno conciliación laboral (OCL)
+      </a>
+    </div>
+
+    <div class="note">
+      Sistema de conciliación prejudicial obligatoria en materia civil y laboral.
+    </div>
+  </div>
+
+  <div class="card module">
+    <h2>Mesa de Entradas Digital</h2>
+
+    <div class="links">
+      <a href="https://jusmendoza.gob.ar/portal-servicios-profesionales/meed/" target="_blank">
+        Ingresar a MEED
+      </a>
+
+      <a href="https://www.jus.mendoza.gov.ar/contenidos" target="_blank">
+        Subir documentación digital
+      </a>
+
+      <a href="https://www2.jus.mendoza.gov.ar/formularios-web/mecc/" target="_blank">
+        Formulario Fuero Civil y Paz
+      </a>
+
+      <a href="https://jusmendoza.gob.ar/formulario-ingreso-demandas-en-fuero-familia/" target="_blank">
+        Formulario Fuero Familia
+      </a>
+    </div>
+
+    <div class="note">
+      Permite subir documentación y generar enlaces para incorporarlos en demandas y cédulas.
+    </div>
+  </div>
+
+  <div class="card module">
+    <h2>Notificaciones electrónicas</h2>
+
+    <div class="links">
+      <a href="https://notificaciones.jus.mendoza.gov.ar/user/login" target="_blank">
+        Acceso al sistema de notificaciones judiciales
+      </a>
+    </div>
+
+    <div class="note">
+      Sistema oficial de notificaciones judiciales electrónicas del PJM.
+    </div>
+  </div>
+
+  <div class="card module">
+    <h2>Firmar documentos</h2>
+
+    <div class="links">
+      <a href="https://firmar.gob.ar/firmador/#/" target="_blank">
+        Firmador Digital Oficial
+      </a>
+    </div>
+
+    <div class="note">
+      Servicio oficial del sistema de Firma Digital de la República Argentina.
+    </div>
+  </div>
+
+</section>
+
+<div class="sectionTitle">Gestión operativa</div>
+
+<section class="grid">
+
+  <div class="card module">
+    <h2>Formularios de gestión judicial</h2>
+
+    <div class="links">
+      <a href="https://www.jus.mendoza.gov.ar/formularios-para-comunicacion-al-banco-nacion-por-sinej" target="_blank">
+        Formularios BNA (oficios judiciales)
+      </a>
+
+    <a href="formulario_medidas_judiciales.doc" download>
+  Formulario de Medidas Judiciales
+</a>
+
+<a href="formulario_8_traba_medidas_cautelares.doc" download>
+  Formulario Traba de Medidas Cautelares – Registro Público y Archivo Judicial
+</a>
+    </div>
+
+    <div class="note">
+      Formularios para ejecutar medidas judiciales, embargos, comunicaciones bancarias y diligencias registrales.
+    </div>
+  </div>
+
+  <div class="card module">
+    <h2>Tasas y aportes</h2>
+
+    <div class="links">
+      <a href="https://colabogmza.com.ar/wp-content/uploads/2026/04/tasas.pdf" target="_blank">
+        Tasas y aportes 2026 · Colegio de Abogados
+      </a>
+
+      <a href="https://www.atm.mendoza.gov.ar/" target="_blank">
+        Liquidar Tasa de Justicia · ATM Mendoza
+      </a>
+
+      <a href="https://micaja.cfm.org.ar/ords/db12/f?p=204:3010" target="_blank">
+        Liquidar Aportes Previsionales · Caja Forense
+      </a>
+
+      <a href="https://colabogmza.com.ar/derecho-fijo/" target="_blank">
+        Liquidar Derecho Fijo
+      </a>
+    </div>
+
+    <div class="note">
+      Accesos para liquidación de tasas, aportes previsionales y derecho fijo profesional.
+    </div>
+  </div>
+
+</section>
+
+<div class="sectionTitle">Operaciones por materia</div>
+
+<section class="grid">
+
+  <div class="card module">
+    <h2>Familia</h2>
+
+    <div class="links">
+      <a href="https://ticketsform.mendoza.gov.ar/ticketsform/servlet/responderformulario?CORTESUPREMA_MEDIADORES" target="_blank">
+        Solicitar turno mediación familiar
+      </a>
+
+      <a href="https://ticketsform.mendoza.gov.ar/ticketsform/servlet/responderformulario?SCJ_DIRECCION_DE_LA_MUJER" target="_blank">
+        Formulario denuncia violencia intrafamiliar
+      </a>
+
+      <a href="pericia-genetica-mpf.docx" download>
+        Formulario pericia genética ADN · MPF
+      </a>
+
+     <a href="pericia-genetica-uncuyo.docx" download>
+        Formulario pericia genética ADN · UNCuyo
+      </a>
+
+      <a href="https://jusmendoza.gob.ar/deudores-alimentarios/" target="_blank">
+        Registro de Deudores Alimentarios
+      </a>
+    </div>
+  </div>
+
+  <div class="card module">
+    <h2>Penal</h2>
+
+    <div class="links">
+      <a href="https://auth24.pjm.gob.ar/auth/realms/registered/protocol/openid-connect/auth?client_id=consulta-led&redirect_uri=https%3A%2F%2Fledpenal.pjm.gob.ar%2F&state=4e8e389b-9749-4c52-9c6c-21a594bd5d0d&response_mode=fragment&response_type=code&scope=openid&nonce=13e7dd2a-2152-4ac6-80ae-97b74390ab7d" target="_blank">
+        LED Penal · Actual
+      </a>
+
+      <a href="https://pled.pjm.gob.ar/profesionales/" target="_blank">
+        LED Penal · Beta
+      </a>
+
+      <a href="https://abogados.mpfmza.gob.ar/login" target="_blank">
+        MPF · Acceso abogados
+      </a>
+   
+ <a href="https://denuncias.mpfmza.gob.ar/#/denuncias_dashboard" target="_blank"> Denuncia Penal en línea</a>
+ <a href=" https://denuncias.mpfmza.gob.ar/#/cargabienes" target="_blank"> Constancia Penal de Bienes Sustraídos</a>
+
+    </div>
+  </div>
+
+  <div class="card module">
+    <h2>Laboral</h2>
+
+    <div class="links">
+      <a href="https://www2.jus.mendoza.gov.ar/formularios-web/laboral/dj01" target="_blank">
+        Formulario de ingreso de causa laboral
+      </a>
+
+      <a href="https://jusmendoza.gob.ar/portal-servicios-profesionales/formulario-de-pericia-medica-laboral/" target="_blank">
+        Formulario de Pericia Médica Laboral
+      </a>
+    </div>
+  </div>
+
+  <div class="card module">
+    <h2>Concursal</h2>
+
+    <div class="links">
+      <a href="https://jusmendoza.gob.ar/formularios-fuero-concursal-aceptacion-de-cargo/" target="_blank">
+        Aceptación de cargo
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<div class="sectionTitle">Consultas y pagos</div>
+
+<section class="grid">
+
+  <div class="card module">
+    <h2>Consultas judiciales</h2>
+
+    <div class="links">
+      <a href="https://jusmendoza.gob.ar/sistema-de-consultas-de-secuestros-judiciales/" target="_blank">
+        Consulta de secuestros judiciales
+      </a>
+
+      <a href="https://jusmendoza.gob.ar/informe-de-titularidad/" target="_blank">
+        Certificado / informe de única propiedad
+      </a>
+    
+    </div>
+  </div>
+
+  <div class="card module">
+    <h2>Pagos y organismos</h2>
+
+    <div class="links">
+      <a href="https://www.atm.mendoza.gov.ar/portalatm/zoneTop/pago/otros/otros_tarjeta.jsp" target="_blank">
+        Pago de multa contravencional / tasas · ATM
+      </a>
+
+      <a href="https://www.atm.mendoza.gov.ar/" target="_blank">
+        ATM Mendoza
+      </a>
+
+      <a href="https://auth.afip.gob.ar/contribuyente_/login.xhtml" target="_blank">
+        ARCA / AFIP
+      </a>
+
+      <a href="https://www.anses.gob.ar/" target="_blank">
+        ANSES
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<div class="sectionTitle">Servicios, registros y Nación</div>
+
+<section class="grid">
+
+  <div class="card module">
+    <h2>Servicios notariales y edictos</h2>
+
+    <div class="links">
+      <a href="https://cn.cnmza.org.ar/?page_id=29" target="_blank">
+        Colegio Notarial · Servicios RAUV
+      </a>
+
+      <a href="https://informacionoficial.mendoza.gob.ar/boletinoficial/" target="_blank">
+        Boletín Oficial Mendoza · Consulta y Publicación de Edictos
+      </a>
+    </div>
+
+    <div class="note">
+      Accesos útiles a datos de RAUV, Colegio Notarial y publicaciones edictales.
+    </div>
+  </div>
+
+  <div class="card module">
+    <h2>Justicia Nacional y Federal</h2>
+
+    <div class="links">
+      <a href="https://www.pjn.gov.ar/" target="_blank">
+        Poder Judicial de la Nación
+      </a>
+
+      <a href="https://www.electoral.gob.ar/nuevo/paginas/btn/tyf.php" target="_blank">
+        Cámara Nacional Electoral · Trámites en línea
+      </a>
+    </div>
+
+    <div class="note">
+      Accesos a sistemas nacionales, federales y trámites electorales en línea.
+    </div>
+  </div>
+
+</section>
+
+  <div class="sectionTitle">Enlaces de interés</div>
+
+  <section class="grid">
+
+    <div class="card module">
+      <h2>Soporte y accesos</h2>
+      <div class="links">
+        <a href="https://devops-pjm.freshdesk.com/support/tickets/new" target="_blank">Solicitar acceso a sistemas PJM</a>
+        <a href="https://jusmendoza.gob.ar/pequenas-causas-y-consumo/" target="_blank">Pequeñas causas y consumo</a>
+        <a href="https://jusmendoza.gob.ar/guia-judicial/" target="_blank">Guía de tribunales y juzgados</a>
+      </div>
+    </div>
+
+    <div class="card module">
+      <h2>Ingreso a Registros</h2>
+      <div class="links">
+        <a href="https://registrocivil.mendoza.gov.ar/pedidosreg/" target="_blank">Registro Civil Mendoza - Solicitud de Partidas</a>
+        <a href="https://www.dnrpa.gov.ar/portal_dnrpa/" target="_blank">DNRPA · Registro Automotor</a>
+         <a href=" https://rpd.jus.mendoza.gov.ar/vub/vistas/web/loginWEB.zul " target="_blank">Registro Público y Archivo Judicial</a>
+      </div>
+    </div>
+
+  </section>
+
+ <div class="footer">
+  <strong>Centro Operativo Legal — GaliA</strong><br>
+  Estudio Jurídico Galli Zuluaga &copy; 2026 · Todos los derechos reservados<br>
+
+  <span style="color:rgba(0,240,255,.6)">
+    www.estudiogallizuluaga.com.ar
+  </span><br><br>
+
+  <span style="font-size:.7rem; color:rgba(234,255,255,.35)">
+    Sistema de uso interno y profesional · Acceso restringido · No constituye asesoramiento legal automatizado
+  </span>
+</div>
+
+</main>
+<!-- 🔐 FIREBASE LOGIN -->
+<script type="module">
+  // Firebase SDK
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+ import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+  sendPasswordResetEmail
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+  // 🔑 TU CONFIG
+  const firebaseConfig = {
+    apiKey: "AIzaSyD7XYREK7Mwx4E1AsLHqkjizECuUj16P7M",
+    authDomain: "legalhub-galli-zuluaga.firebaseapp.com",
+    projectId: "legalhub-galli-zuluaga",
+    storageBucket: "legalhub-galli-zuluaga.firebasestorage.app",
+    messagingSenderId: "721831510453",
+    appId: "1:721831510453:web:59a604bdab36bb3e56d9fc"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+ // 🧠 ELEMENTOS
+const loginBox = document.getElementById("loginBox");
+const appContent = document.querySelector("main");
+const splash = document.getElementById("splash");
+
+ // 🔐 CONTROL DE ACCESO + SPLASH
+loginBox.style.display = "none";
+appContent.style.display = "none";
+splash.style.display = "flex";
+
+setTimeout(() => {
+  splash.style.display = "none";
+  splash.style.pointerEvents = "none";
+
+  const allowedUsers = [
+    "carolinagalliz@gmail.com",
+    "alejogalli9@gmail.com",
+    "demo@legalhub.com"
+  ];
+
+  onAuthStateChanged(auth, async (user) => {
+
+    if (user && allowedUsers.includes(user.email)) {
+      loginBox.style.display = "none";
+      loginBox.style.pointerEvents = "none";
+      appContent.style.display = "block";
+
+      // 👉 MODO DEMO
+      if (user.email === "demo@legalhub.com") {
+        alert("Bienvenido/a al modo demostración de LegalHub Mendoza. Esta versión permite conocer el entorno de trabajo y las herramientas disponibles.");
+      }
+
+    } else {
+      appContent.style.display = "none";
+      loginBox.style.display = "flex";
+      loginBox.style.pointerEvents = "auto";
+
+      if (user) {
+        alert("Acceso restringido. Este usuario no está autorizado.");
+        await signOut(auth);
+      }
+    }
+
+  });
+
+}, 4200);
+
+  // 🔑 LOGIN
+window.login = async () => {
+  const email = document.getElementById("email").value;
+  const pass = document.getElementById("password").value;
+
+  try {
+    await signInWithEmailAndPassword(auth, email, pass);
+  } catch (e) {
+    alert("Error: " + e.message);
+  }
+};
+// 🔥 DEMO LOGIN (PEGAR ACÁ)
+window.demoLogin = async () => {
+  try {
+    await signInWithEmailAndPassword(
+      auth,
+      "demo@legalhub.com",
+      "Demo1234"
+    );
+  } catch (e) {
+    alert(e.message);
+  }
+};
+  // 🆕 REGISTRO
+ window.register = async () => {
+  const email = document.getElementById("email").value.trim();
+  const pass = document.getElementById("password").value.trim();
+
+  if (!email) {
+    alert("Primero ingresá tu correo electrónico.");
+    return;
+  }
+
+  if (!email.includes("@")) {
+    alert("Ingresá un correo válido.");
+    return;
+  }
+
+  if (!pass || pass.length < 6) {
+    alert("La contraseña debe tener al menos 6 caracteres.");
+    return;
+  }
+
+  try {
+    await createUserWithEmailAndPassword(auth, email, pass);
+    alert("Cuenta creada correctamente. Ya podés ingresar.");
+  } catch (e) {
+    alert("Error: " + e.message);
+  }
+};
+window.resetPassword = async () => {
+  const email = document.getElementById("email").value.trim();
+
+  if (!email) {
+    alert("Primero ingresá tu correo electrónico.");
+    return;
+  }
+
+  try {
+    await sendPasswordResetEmail(auth, email);
+    alert("Te enviamos un correo para recuperar tu contraseña.");
+  } catch (e) {
+    alert("No pudimos enviar el correo. Verificá que el email esté registrado.");
+  }
+};
+
+  // 🚪 LOGOUT
+  window.logout = async () => {
+    await signOut(auth);
+  };
+</script>
+
+</body>
+</html>
