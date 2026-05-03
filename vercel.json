@@ -9,18 +9,5 @@
         }
       ]
     }
-  ],
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "centro.estudiogallizuluaga.com.ar"
-        }
-      ],
-      "destination": "https://legalhub.estudiogallizuluaga.com.ar/$1",
-      "permanent": true
-    }
   ]
 }
