@@ -4,16 +4,16 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Centro Operativo Legal — GaliA</title>
-<meta property="og:title" content="LegalHub — Estudio Jurídico Galli Zuluaga">
+<meta property="og:title" content="Centro Operativo Legal — GaliA">
 <meta property="og:description" content="Plataforma legal inteligente del Estudio Jurídico Galli Zuluaga. Acceso unificado a herramientas, gestión de causas y sistemas jurídicos para el ejercicio profesional.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://legalhub.estudiogallizuluaga.com.ar">
-<meta property="og:image" content="https://i.postimg.cc/GhcgG3L9/og-legalhub.png">
+<meta property="og:url" content="https://centro.estudiogallizuluaga.com.ar">
+<meta property="og:image" content="https://centro.estudiogallizuluaga.com.ar/og.imagecentro.png">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="LegalHub — Estudio Jurídico Galli Zuluaga">
+<meta name="twitter:title" content="Centro Operativo GaliA — Estudio Jurídico Galli Zuluaga">
 <meta name="twitter:description" content="Plataforma legal inteligente del Estudio Jurídico Galli Zuluaga.">
-<meta name="twitter:image" content="https://legalhub.estudiogallizuluaga.com.ar/og-legalhub.jpg">
+<meta name="twitter:image" content="https://centro.estudiogallizuluaga.com.ar/og.imagecentro.png">
 
 <style>
 
@@ -528,6 +528,122 @@ a:hover::after{
   display:none !important;
   pointer-events:none !important;
 }
+#splash.splash-hidden,
+#loginBox.login-hidden{
+  display:none !important;
+  pointer-events:none !important;
+}
+/* ================================
+   CERNTRO OPERATIVO GALIA · AJUSTE MOBILE SEGURO
+   Solo visual. No toca JS ni enlaces.
+================================ */
+
+@media (max-width: 700px){
+
+  .app{
+    width:92vw;
+    padding:16px 0 36px;
+  }
+
+  .hero{
+    padding:18px;
+    margin-bottom:22px;
+    border-radius:18px;
+  }
+
+  .badge{
+    font-size:.66rem;
+    line-height:1.25;
+    padding:7px 10px;
+  }
+
+  h1{
+    font-size:1.35rem;
+    line-height:1.18;
+    letter-spacing:.045em;
+  }
+
+  .hero p{
+    font-size:.92rem;
+    line-height:1.45;
+  }
+
+  .grid{
+    gap:12px;
+  }
+
+  .card{
+    border-radius:18px;
+    padding:16px;
+    margin-bottom:14px;
+  }
+
+  .module{
+    min-height:auto;
+  }
+
+  .module h2{
+    font-size:.88rem;
+    margin-bottom:12px;
+  }
+
+  .links{
+    gap:9px;
+  }
+
+  a{
+    font-size:.9rem;
+    line-height:1.25;
+    padding:13px 14px;
+    border-radius:13px;
+  }
+
+  .note{
+    font-size:.78rem;
+    line-height:1.35;
+    padding:9px 10px;
+  }
+
+  .sectionTitle{
+    margin-top:22px;
+    margin-bottom:10px;
+    font-size:.78rem;
+  }
+
+  .btn-estudio,
+  .btn-suscripcion{
+    width:100%;
+    text-align:center;
+    box-sizing:border-box;
+  }
+
+  .footer{
+    font-size:.72rem;
+    line-height:1.5;
+    padding:0 10px;
+  }
+}
+#loginBox{
+  pointer-events:auto !important;
+}
+
+#loginBox > div:first-child{
+  pointer-events:none !important;
+}
+
+#loginBox > div:last-child{
+  pointer-events:auto !important;
+  z-index:10001;
+}
+
+button{
+  position:relative;
+  z-index:10002;
+}
+
+button:active{
+  transform:scale(.96);
+}
 </style>
 </head>
 <body>
@@ -535,10 +651,14 @@ a:hover::after{
 <div id="splash">
   <div class="scan-line"></div>
 
-  <img src="https://i.postimg.cc/GhcgG3L9/og-legalhub.png" alt="LegalHub Estudio Jurídico Galli Zuluaga" />
-
+ <img 
+  src="/img/galia-legal-system.png" 
+  alt="Centro Operativo Legal GaliA - Estudio Jurídico Galli Zuluaga"
+  loading="eager"
+  decoding="async"
+/>
   <div class="boot-panel">
-    <div class="boot-text">INICIANDO LEGAL HUB</div>
+    <div class="boot-text">INICIANDO SISTEMA GaliA</div>
 
     <div class="boot-bar">
       <div class="boot-fill"></div>
@@ -597,10 +717,14 @@ a:hover::after{
       letter-spacing:.08em;
       text-shadow:0 0 18px rgba(0,240,255,.9);
     ">
-      ACCESO LEGALHUB
+      ACCESO AL SISTEMA GaliA
     </h2>
 
-   <input id="email" type="email" placeholder="Ingrese su correo electrónico"
+ <input 
+  id="email" 
+  type="email" 
+  autocomplete="email"
+  placeholder="Ingrese su correo electrónico"
   style="
     width:85%;
     max-width:300px;
@@ -613,9 +737,14 @@ a:hover::after{
     color:#eaffff;
     outline:none;
     text-align:center;
-  " />
+  " 
+/>
 
-<input id="password" type="password" placeholder="Cree o ingrese su contraseña"
+<input 
+  id="password" 
+  type="password" 
+  autocomplete="current-password"
+  placeholder="Cree o ingrese su contraseña"
   style="
     width:85%;
     max-width:300px;
@@ -628,22 +757,22 @@ a:hover::after{
     color:#eaffff;
     outline:none;
     text-align:center;
-  " />
+  " 
+/>
     <div style="display:flex; gap:10px; margin-top:16px;">
-      <button onclick="login()" style="
-        flex:1;
-        padding:12px;
-        border-radius:14px;
-        border:1px solid #00f0ff;
-        background:#00f0ff;
-        color:#001014;
-        font-weight:bold;
-        cursor:pointer;
-        box-shadow:0 0 18px rgba(0,240,255,.35);
-      ">
-        Ingresar
-      </button>
-
+     <button onclick="login()" style="
+  flex:1;
+  padding:12px;
+  border-radius:14px;
+  border:1px solid #00f0ff;
+  background:#00f0ff;
+  color:#001014;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 0 18px rgba(0,240,255,.35);
+">
+  Ingresar
+</button>
       <button onclick="register()" style="
         flex:1;
         padding:12px;
@@ -670,7 +799,7 @@ a:hover::after{
   font-weight:bold;
   cursor:pointer;
 ">
-  Explorar LegalHub (modo demostración)
+  Explorar GaliA (modo demostración)
 </button>
 
 <button onclick="resetPassword()" style="
@@ -683,39 +812,51 @@ a:hover::after{
   Olvidé mi contraseña
 </button>
     <p style="
-      margin:18px 0 0;
-      font-size:.78rem;
-      color:rgba(234,255,255,.55);
-      line-height:1.45;
-    ">
-      Acceso profesional al Centro Operativo Legal del Estudio Jurídico Galli Zuluaga.
-    </p>
+  margin:18px 0 0;
+  font-size:.78rem;
+  color:rgba(234,255,255,.55);
+  line-height:1.45;
+">
+  Acceso profesional al Centro Operativo Legal del Estudio Jurídico Galli Zuluaga.
+</p>
 
+<p id="loginMsg" style="
+  margin-top:12px;
+  font-size:.82rem;
+  color:#ffd166;
+  min-height:20px;
+"></p>
   </div>
 </div>
 
 <main class="app">
  
-     </div>
-  <section class="hero">
-    <div class="badge">GaliA · Asistente Legal Inteligente</div>
-    <h1>Centro Operativo Legal — GaliA</h1>
-    <p><strong>Plataforma legal inteligente del Estudio Jurídico Galli Zuluaga.</strong><br>
-Acceso unificado a herramientas, gestión de causas y sistemas jurídicos para el ejercicio profesional.</p>
- <!-- 🔥 BOTÓN -->
- <div style="margin-top:24px; margin-bottom:30px;">
-  <a href="https://www.estudiogallizuluaga.com.ar" target="_blank" class="btn-estudio">
-    Acceder al sitio del Estudio
-  </a>
+<section class="hero">
+  <div class="badge">GaliA · Asistente Legal Inteligente</div>
+
+  <h1>Centro Operativo Legal — GaliA</h1>
+
+  <p>
+    <strong>Plataforma legal inteligente del Estudio Jurídico Galli Zuluaga.</strong><br>
+    Acceso unificado a herramientas, gestión de causas y sistemas jurídicos para el ejercicio profesional.
+  </p>
+
+  <!-- 🔥 BOTÓN -->
+  <div style="margin-top:24px; margin-bottom:30px;">
+    <a href="https://www.estudiogallizuluaga.com.ar" target="_blank" class="btn-estudio">
+      Acceder al sitio del Estudio
+    </a>
+  </div>
+
+  <div style="
+    font-size:.75rem;
+    color:#65ffb8;
+    margin-bottom:6px;
+    letter-spacing:.05em;
+  ">
+    ✔ Recomendado para uso profesional continuo
 </div>
-<div style="
-  font-size:.75rem;
-  color:#65ffb8;
-  margin-bottom:6px;
-  letter-spacing:.05em;
-">
-  ✔ Recomendado para uso profesional continuo
-</div>
+</section> <!-- HERO -->
 
 <!-- 🔥 BOTONES SUSCRIPCIÓN -->
 <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
@@ -772,9 +913,9 @@ Acceso unificado a herramientas, gestión de causas y sistemas jurídicos para e
   <h2>Gestión de causas</h2>
 
   <div class="links">
-    <a href="https://jusmendoza.gob.ar/portal-servicios-profesionales/portal-de-gestion-de-causas-judiciales/" target="_blank">
-      Portal IOL (gestión de causas)
-    </a>
+  <a href="https://jusmendoza.gob.ar/portal-servicios-profesionales/portal-de-gestion-de-causas-judiciales/" target="_blank" data-id="portal_iol">
+  Portal IOL (gestión de causas)
+</a>
 
     <a href="https://www2.jus.mendoza.gov.ar/listas/proveidos/listas.php" target="_blank">
       Sistema de listas / proveídos
@@ -810,12 +951,12 @@ Acceso unificado a herramientas, gestión de causas y sistemas jurídicos para e
     <h2>Mesa de Entradas Digital</h2>
 
     <div class="links">
-      <a href="https://jusmendoza.gob.ar/portal-servicios-profesionales/meed/" target="_blank">
-        Ingresar a MEED
-      </a>
+    <a href="https://jusmendoza.gob.ar/portal-servicios-profesionales/meed/" target="_blank" data-id="meed">
+  Ingresar a MEED
+</a>
 
       <a href="https://www.jus.mendoza.gov.ar/contenidos" target="_blank">
-        Subir documentación digital
+        Generar link contenido digital
       </a>
 
       <a href="https://www2.jus.mendoza.gov.ar/formularios-web/mecc/" target="_blank">
@@ -836,9 +977,9 @@ Acceso unificado a herramientas, gestión de causas y sistemas jurídicos para e
     <h2>Notificaciones electrónicas</h2>
 
     <div class="links">
-      <a href="https://notificaciones.jus.mendoza.gov.ar/user/login" target="_blank">
-        Acceso al sistema de notificaciones judiciales
-      </a>
+   <a href="https://notificaciones.jus.mendoza.gov.ar/user/login" target="_blank" data-id="notificaciones">
+  Acceso al sistema de notificaciones judiciales
+</a>
     </div>
 
     <div class="note">
@@ -891,23 +1032,25 @@ Acceso unificado a herramientas, gestión de causas y sistemas jurídicos para e
   <div class="card module">
     <h2>Tasas y aportes</h2>
 
-    <div class="links">
-      <a href="https://colabogmza.com.ar/wp-content/uploads/2026/04/tasas.pdf" target="_blank">
-        Tasas y aportes 2026 · Colegio de Abogados
-      </a>
+   <div class="links">
 
-      <a href="https://www.atm.mendoza.gov.ar/" target="_blank">
-        Liquidar Tasa de Justicia · ATM Mendoza
-      </a>
+  <a href="https://colabogmza.com.ar/wp-content/uploads/2026/04/tasas.pdf" target="_blank" data-id="tasas_aportes_pdf">
+    Tasas y aportes 2026 · Colegio de Abogados · Abril 2026
+  </a>
 
-      <a href="https://micaja.cfm.org.ar/ords/db12/f?p=204:3010" target="_blank">
-        Liquidar Aportes Previsionales · Caja Forense
-      </a>
+  <a href="https://www.atm.mendoza.gov.ar/" target="_blank" data-id="tasas">
+    Liquidar Tasa de Justicia · ATM Mendoza
+  </a>
 
-      <a href="https://colabogmza.com.ar/derecho-fijo/" target="_blank">
-        Liquidar Derecho Fijo
-      </a>
-    </div>
+  <a href="https://micaja.cfm.org.ar/ords/db12/f?p=204:3010" target="_blank" data-id="aportes">
+    Liquidar Aportes Previsionales · Caja Forense
+  </a>
+
+  <a href="https://colabogmza.com.ar/derecho-fijo/" target="_blank" data-id="derecho_fijo">
+    Liquidar Derecho Fijo
+  </a>
+
+</div>
 
     <div class="note">
       Accesos para liquidación de tasas, aportes previsionales y derecho fijo profesional.
@@ -1105,13 +1248,16 @@ Acceso unificado a herramientas, gestión de causas y sistemas jurídicos para e
 
  <div class="footer">
   <strong>Centro Operativo Legal — GaliA</strong><br>
-  Estudio Jurídico Galli Zuluaga &copy; 2026 · Todos los derechos reservados<br>
+  Plataforma jurídica inteligente del Estudio Jurídico Galli Zuluaga &copy; 2026 · Todos los derechos reservados<br>
 
-  <span style="color:rgba(0,240,255,.6)">
-    www.estudiogallizuluaga.com.ar
-  </span><br><br>
+ <a href="https://www.estudiogallizuluaga.com.ar" target="_blank"
+   style="color:rgba(0,240,255,.6); text-decoration:none;"
+   onmouseover="this.style.textShadow='0 0 10px #00f0ff'"
+   onmouseout="this.style.textShadow='none'">
+  www.estudiogallizuluaga.com.ar
+</a>
 
-  <span style="font-size:.7rem; color:rgba(234,255,255,.35)">
+  <span style="font-size:.7rem; color:rgba(234,255,255,.35)"></span>
     Sistema de uso interno y profesional · Acceso restringido · No constituye asesoramiento legal automatizado
   </span>
 </div>
@@ -1121,19 +1267,26 @@ Acceso unificado a herramientas, gestión de causas y sistemas jurídicos para e
 <script type="module">
   // Firebase SDK
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
- import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut,
-  sendPasswordResetEmail
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-  // 🔑 TU CONFIG
+  import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut,
+    sendPasswordResetEmail
+  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+  import {
+    getFirestore,
+    doc,
+    getDoc
+  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+  // 🔑 CONFIG FIREBASE
   const firebaseConfig = {
     apiKey: "AIzaSyC_KKfDu_cfL33xCoQHp_6xBeeI2GHwso8",
-    authDomain: "legalhub-galli-zuluaga.firebaseapp.com",
+   authDomain: "legalhub-galli-zuluaga.firebaseapp.com",
     projectId: "legalhub-galli-zuluaga",
     storageBucket: "legalhub-galli-zuluaga.firebasestorage.app",
     messagingSenderId: "721831510453",
@@ -1142,125 +1295,446 @@ Acceso unificado a herramientas, gestión de causas y sistemas jurídicos para e
 
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
+  const db = getFirestore(app);
 
- // 🧠 ELEMENTOS
-const loginBox = document.getElementById("loginBox");
-const appContent = document.querySelector("main");
-const splash = document.getElementById("splash");
+  // 🧠 ELEMENTOS
+  const loginBox = document.getElementById("loginBox");
+  const appContent = document.querySelector("main");
+  const splash = document.getElementById("splash");
+  const demoOverlay = document.getElementById("demoOverlay");
 
- // 🔐 CONTROL DE ACCESO + SPLASH
-loginBox.style.display = "none";
-appContent.style.display = "none";
-splash.style.display = "flex";
+  // 🔐 CONFIG DEMO
+  const DEMO_EMAIL = "demo@legalhub.com";
+  const DEMO_TIME = 120000; // 2 minutos
+  let demoInterval = null;
+  let demoTimer = null;
 
-setTimeout(() => {
-  splash.style.display = "none";
-  splash.style.pointerEvents = "none";
-
-  const allowedUsers = [
+  const internos = [
     "carolinagalliz@gmail.com",
-    "alejogalli9@gmail.com",
-    "demo@legalhub.com"
+    "alejogalli9@gmail.com"
   ];
 
-  onAuthStateChanged(auth, async (user) => {
+  const mostrarLogin = () => {
+    appContent.style.display = "none";
+    loginBox.style.display = "flex";
+    loginBox.style.pointerEvents = "auto";
 
-    if (user && allowedUsers.includes(user.email)) {
-      loginBox.style.display = "none";
-      loginBox.style.pointerEvents = "none";
-      appContent.style.display = "block";
+    document.body.style.pointerEvents = "auto";
 
-      // 👉 MODO DEMO
-      if (user.email === "demo@legalhub.com") {
-        alert("Bienvenido/a al modo demostración de LegalHub Mendoza. Esta versión permite conocer el entorno de trabajo y las herramientas disponibles.");
-      }
+    if (demoOverlay) {
+      demoOverlay.style.display = "none";
+    }
+  };
 
-    } else {
-      appContent.style.display = "none";
-      loginBox.style.display = "flex";
-      loginBox.style.pointerEvents = "auto";
+  const mostrarSistema = () => {
+    loginBox.style.display = "none";
+    loginBox.style.pointerEvents = "none";
+    appContent.style.display = "block";
+    document.body.style.pointerEvents = "auto";
+  };
 
-      if (user) {
-        alert("Acceso restringido. Este usuario no está autorizado.");
-        await signOut(auth);
-      }
+  const iniciarModoDemo = () => {
+  console.log("Modo demo iniciado");
+
+  const demoHUD = document.getElementById("demoHUD");
+
+  if (demoTimer) clearTimeout(demoTimer);
+
+  let segundos = DEMO_TIME / 1000;
+
+  if (demoHUD) {
+    demoHUD.style.display = "block";
+  }
+
+  demoInterval = setInterval(() => {
+    segundos--;
+
+    const min = String(Math.floor(segundos / 60)).padStart(2, "0");
+    const sec = String(segundos % 60).padStart(2, "0");
+
+    if (demoHUD) {
+      demoHUD.innerText = `SISTEMA GaliA · DEMO ${min}:${sec}`;
     }
 
-  });
+    if (segundos <= 0) {
+   clearInterval(demoInterval);
+    }
+  }, 1000);
 
-}, 4200);
+   demoTimer = setTimeout(() => {
+  if (!demoOverlay) return;
 
+  sessionStorage.setItem("demo_expirado", "true");
+  demoOverlay.style.display = "flex";
+  document.body.style.pointerEvents = "none";
+  demoOverlay.style.pointerEvents = "auto";
+
+  if (demoHUD) {
+    demoHUD.style.display = "none";
+  }
+
+}, DEMO_TIME);
+};
+
+  // 🔐 ESTADO INICIAL
+  loginBox.style.display = "flex";
+  loginBox.style.pointerEvents = "none";
+  appContent.style.display = "none";
+  splash.style.display = "flex";
+
+  setTimeout(() => {
+    splash.style.display = "none";
+    splash.style.pointerEvents = "none";
+
+    onAuthStateChanged(auth, async (user) => {
+      if (!user) {
+        mostrarLogin();
+        return;
+      }
+
+      const email = user.email.toLowerCase();
+
+      // 🔐 INTERNOS SIEMPRE ENTRAN
+      if (internos.includes(email)) {
+        mostrarSistema();
+        return;
+      }
+
+      // 🔥 VALIDACIÓN FIRESTORE
+      const ref = doc(db, "usuarios_autorizados", email);
+      const snap = await getDoc(ref);
+
+      if (!snap.exists()) {
+        await signOut(auth);
+        mostrarLogin();
+        return;
+      }
+
+      const data = snap.data();
+
+      if (data.activo !== true) {
+        await signOut(auth);
+        mostrarLogin();
+        return;
+      }
+
+mostrarSistema();
+
+if (email === DEMO_EMAIL) {
+
+  if (sessionStorage.getItem("demo_expirado") === "true") {
+    if (demoOverlay) {
+      demoOverlay.style.display = "flex";
+      document.body.style.pointerEvents = "none";
+      demoOverlay.style.pointerEvents = "auto";
+    }
+  } else {
+    iniciarModoDemo();
+
+    const demoNotice = document.getElementById("demoNotice");
+
+    if (demoNotice) {
+      demoNotice.style.display = "block";
+      demoNotice.style.opacity = "1";
+
+      setTimeout(() => {
+        demoNotice.style.opacity = "0";
+
+        setTimeout(() => {
+          demoNotice.style.display = "none";
+          demoNotice.style.opacity = "1";
+        }, 500);
+
+      }, 2500);
+    }
+  }
+}
+ });
+
+  }, 4200); 
   // 🔑 LOGIN
-window.login = async () => {
-  const email = document.getElementById("email").value;
-  const pass = document.getElementById("password").value;
+  window.login = async () => {
+    const email = document.getElementById("email").value.trim().toLowerCase();
+    const pass = document.getElementById("password").value.trim();
+    const loginMsg = document.getElementById("loginMsg");
 
-  try {
-    await signInWithEmailAndPassword(auth, email, pass);
-  } catch (e) {
-    alert("Error: " + e.message);
-  }
-};
-// 🔥 DEMO LOGIN (PEGAR ACÁ)
-window.demoLogin = async () => {
-  try {
-    await signInWithEmailAndPassword(
-      auth,
-      "demo@legalhub.com",
-      "Demo1234"
-    );
-  } catch (e) {
-    alert(e.message);
-  }
-};
-  // 🆕 REGISTRO
- window.register = async () => {
-  const email = document.getElementById("email").value.trim();
-  const pass = document.getElementById("password").value.trim();
+    if (loginMsg) loginMsg.innerText = "Validando acceso...";
 
-  if (!email) {
-    alert("Primero ingresá tu correo electrónico.");
-    return;
-  }
+    try {
+      await signInWithEmailAndPassword(auth, email, pass);
 
-  if (!email.includes("@")) {
-    alert("Ingresá un correo válido.");
-    return;
-  }
+      if (loginMsg) {
+        loginMsg.innerText = "Acceso validado. Iniciando sistema...";
+      }
 
-  if (!pass || pass.length < 6) {
-    alert("La contraseña debe tener al menos 6 caracteres.");
-    return;
-  }
+    } catch (e) {
+      console.error("Error login:", e);
 
-  try {
-    await createUserWithEmailAndPassword(auth, email, pass);
-    alert("Cuenta creada correctamente. Ya podés ingresar.");
-  } catch (e) {
-    alert("Error: " + e.message);
-  }
-};
-window.resetPassword = async () => {
-  const email = document.getElementById("email").value.trim();
-
-  if (!email) {
-    alert("Primero ingresá tu correo electrónico.");
-    return;
-  }
-
-  try {
-    await sendPasswordResetEmail(auth, email);
-    alert("Te enviamos un correo para recuperar tu contraseña.");
-  } catch (e) {
-    alert("No pudimos enviar el correo. Verificá que el email esté registrado.");
-  }
-};
-
-  // 🚪 LOGOUT
-  window.logout = async () => {
-    await signOut(auth);
+      if (loginMsg) {
+        loginMsg.innerText = "Correo o contraseña incorrectos.";
+      }
+    }
   };
+
+  // 🔥 DEMO
+  window.demoLogin = async () => {
+    try {
+      await signInWithEmailAndPassword(
+        auth,
+        "demo@legalhub.com",
+        "Demo1234"
+      );
+    } catch (e) {
+      alert("No se pudo iniciar el modo demostración.");
+      console.error(e);
+    }
+  };
+
+  // 🆕 REGISTRO
+  window.register = async () => {
+    const email = document.getElementById("email").value.trim().toLowerCase();
+    const pass = document.getElementById("password").value.trim();
+
+    if (!email || !email.includes("@")) {
+      alert("Ingresá un correo válido.");
+      return;
+    }
+
+    if (!pass || pass.length < 6) {
+      alert("La contraseña debe tener al menos 6 caracteres.");
+      return;
+    }
+
+    try {
+      await createUserWithEmailAndPassword(auth, email, pass);
+      alert("Cuenta creada correctamente. El acceso queda sujeto a autorización.");
+    } catch (e) {
+      alert("Error: " + e.message);
+    }
+  };
+
+  // 🔁 RECUPERAR PASSWORD
+  window.resetPassword = async () => {
+    const email = document.getElementById("email").value.trim().toLowerCase();
+
+    if (!email) {
+      alert("Ingresá tu correo.");
+      return;
+    }
+
+    try {
+      await sendPasswordResetEmail(auth, email);
+      alert("Te enviamos un correo para recuperar tu contraseña.");
+    } catch (e) {
+      alert("Error al enviar el correo.");
+      console.error(e);
+    }
+  };
+// 🚪 LOGOUT
+window.logout = async () => {
+  if (demoTimer) clearTimeout(demoTimer);
+
+  const demoHUD = document.getElementById("demoHUD");
+  if (demoHUD) demoHUD.style.display = "none";
+
+  document.body.style.pointerEvents = "auto";
+
+  if (demoOverlay) {
+    demoOverlay.style.display = "none";
+  }
+
+  await signOut(auth);
+};
+
+// 🔙 VOLVER AL LOGIN
+window.volverLogin = async () => {
+  if (demoTimer) clearTimeout(demoTimer);
+  if (demoInterval) clearInterval(demoInterval);
+
+  sessionStorage.removeItem("demo_expirado");
+
+  const demoHUD = document.getElementById("demoHUD");
+  if (demoHUD) demoHUD.style.display = "none";
+
+  const demoOverlay = document.getElementById("demoOverlay");
+  if (demoOverlay) demoOverlay.style.display = "none";
+
+  document.body.style.pointerEvents = "auto";
+
+  await signOut(auth);
+};
 </script>
+
+<div id="demoHUD" style="
+  position:fixed;
+  top:14px;
+  right:16px;
+  padding:10px 16px;
+  border-radius:999px;
+  border:1px solid rgba(0,240,255,.55);
+  background:rgba(0,0,0,.72);
+  color:#00f0ff;
+  font-size:.72rem;
+  letter-spacing:.12em;
+  display:none;
+  z-index:99998;
+  box-shadow:0 0 18px rgba(0,240,255,.45);
+  font-weight:bold;
+">
+  SISTEMA GaliA · DEMO 02:00
+</div>
+
+<div id="demoOverlay" style="
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle at 50% 20%, rgba(0,240,255,.15), transparent 40%), #020b14;
+  backdrop-filter:blur(10px);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:99999;
+">
+
+  <div style="
+    text-align:center;
+    padding:50px 40px;
+    border-radius:22px;
+    border:1px solid rgba(0,240,255,.4);
+    box-shadow:
+      0 0 30px rgba(0,240,255,.3),
+      0 0 80px rgba(0,240,255,.12),
+      inset 0 0 25px rgba(0,240,255,.08);
+    background:rgba(2,11,20,.95);
+    max-width:420px;
+  ">
+
+    <div style="
+      font-size:.7rem;
+      letter-spacing:.25em;
+      color:#7df8ff;
+      margin-bottom:10px;
+      text-transform:uppercase;
+    ">
+      Sistema GaliA
+    </div>
+
+    <h2 style="
+      color:#00f0ff;
+      margin:0;
+      text-shadow:0 0 20px rgba(0,240,255,.9);
+    ">
+      MODO DEMO FINALIZADO
+    </h2>
+    <p style="margin-top:10px; font-size:.75rem; color:#7df8ff;">
+  Sesión finalizada por límite de prueba
+</p>
+
+    <p style="
+      margin-top:18px;
+      color:#b8dcdc;
+      line-height:1.5;
+      font-size:.95rem;
+    ">
+      Accedé al sistema completo para continuar operando con todas las herramientas legales activas.
+    </p>
+    <p style="margin-top:12px; color:#65ffb8; font-size:.8rem;">
+  ✔ Activación inmediata · ✔ Acceso completo
+</p>
+<p style="
+  margin-top:18px;
+  margin-bottom:10px;
+  font-size:.9rem;
+  color:#00f0ff;
+  font-weight:bold;
+  letter-spacing:.06em;
+  text-shadow: 0 0 12px rgba(0,240,255,.8);
+">
+  ACTIVAR ACCESO PROFESIONAL
+</p>
+
+  <!-- PLAN MENSUAL -->
+<a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=1b14f1ae27a042049d5e180504f6c4d8"
+   target="_blank"
+   style="
+    display:inline-block;
+    margin-top:24px;
+    padding:14px 32px;
+    border-radius:999px;
+    border:1px solid #00f0ff;
+    color:#00f0ff;
+    text-decoration:none;
+    font-weight:bold;
+    letter-spacing:.05em;
+    box-shadow:
+      0 0 18px rgba(0,240,255,.5),
+      0 0 40px rgba(0,240,255,.2);
+   ">
+  ACTIVAR PLAN MENSUAL
+</a>
+
+<!-- PLAN ANUAL -->
+<a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=5363ed616a1e4681b2eebaf676bfd5d6"
+   target="_blank"
+   style="
+    display:block;
+    margin-top:14px;
+    padding:14px 32px;
+    border-radius:999px;
+    border:1px solid #65ffb8;
+    color:#65ffb8;
+    text-decoration:none;
+    font-weight:bold;
+    letter-spacing:.05em;
+    box-shadow:
+      0 0 18px rgba(101,255,184,.5),
+      0 0 40px rgba(101,255,184,.2);
+   ">
+  ACTIVAR PLAN ANUAL · AHORRÁ 30%
+</a>
+<a href="https://wa.me/542616600192" target="_blank" style="
+  display:block;
+  margin-top:14px;
+  font-size:.8rem;
+  color:#7df8ff;
+  text-decoration:none;
+">
+  ¿Necesitás ayuda? Contactanos por WhatsApp
+</a>
+<button onclick="volverLogin()" style="
+  margin-top:14px;
+  padding:10px 20px;
+  border-radius:999px;
+  border:1px solid rgba(255,80,80,.5);
+  background:rgba(255,80,80,.08);
+  color:#ff6b6b;
+  font-size:.8rem;
+  cursor:pointer;
+">
+  Volver al inicio
+</button>
+
+  </div>
+</div>
+
+<div id="demoNotice" style="
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  padding:10px 18px;
+  border-radius:999px;
+  border:1px solid rgba(0,240,255,.5);
+  background:rgba(0,0,0,.75);
+  color:#00f0ff;
+  font-size:.75rem;
+  letter-spacing:.12em;
+  display:none;
+  z-index:99997;
+  box-shadow:0 0 14px rgba(0,240,255,.4);
+  backdrop-filter:blur(6px);
+">
+  MODO DEMOSTRACIÓN ACTIVO
+</div>
 
 </body>
 </html>
