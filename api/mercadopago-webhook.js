@@ -31,11 +31,16 @@ export default async function handler(req, res) {
 
     const body = req.body;
 
-    const email =
-      body?.data?.payer?.email ||
-      body?.payer_email ||
-      body?.data?.email;
+const paymentId = body?.data?.id || req.query?.["data.id"];
+const type = body?.type || req.query?.type;
 
+console.log("PAYMENT ID:", paymentId);
+console.log("TYPE:", type);
+
+const email =
+  body?.data?.payer?.email ||
+  body?.payer_email ||
+  body?.data?.email;
     if (!email) {
       return res.status(200).send("Sin email");
     }
