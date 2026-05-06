@@ -41,12 +41,15 @@ export default async function handler(req, res) {
     let plan = "activo";
 
     if (!email && paymentId) {
-      const mpRes = await fetch(`https://api.mercadopago.com/preapproval/${paymentId}`, {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${process.env.MERCADOPAGO_ACCESS_TOKEN}`
+      const mpRes = await fetch(
+        `https://api.mercadopago.com/preapproval/${paymentId}`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${process.env.MERCADOPAGO_ACCESS_TOKEN}`
+          }
         }
-      });
+      );
 
       const mpData = await mpRes.json();
 
@@ -66,6 +69,7 @@ export default async function handler(req, res) {
     }
 
     if (!email) {
+      console.log("Sin email para activar usuario");
       return res.status(200).send("Sin email");
     }
 
@@ -76,6 +80,8 @@ export default async function handler(req, res) {
       origen: "mercadopago",
       fechaActivacion: new Date()
     }, { merge: true });
+
+    console.log("Usuario activado:", email.toLowerCase(), plan);
 
     return res.status(200).send("OK");
 
