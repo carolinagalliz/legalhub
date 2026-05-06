@@ -20,7 +20,11 @@ export default async function handler(req, res) {
   try {
     console.log("Webhook funcionando");
 
-    // 👇 IMPORTANTE: responder aunque no haya body
+    if (!db) {
+      console.error("Firestore no inicializado");
+      return res.status(200).send("Firestore no inicializado");
+    }
+
     if (!req.body) {
       return res.status(200).send("Webhook activo");
     }
@@ -36,11 +40,12 @@ export default async function handler(req, res) {
       return res.status(200).send("Sin email");
     }
 
-    await db.collection("usuarios_autorizados").doc(email).set({
-      email,
+    await db.collection("usuarios_autorizados").doc(email.toLowerCase()).set({
+      email: email.toLowerCase(),
       activo: true,
-      plan: "suscripcion",
-      fecha: new Date()
+      plan: "activo",
+      origen: "mercadopago",
+      fechaActivacion: new Date()
     }, { merge: true });
 
     return res.status(200).send("OK");
